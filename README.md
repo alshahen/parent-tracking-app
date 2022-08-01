@@ -32,3 +32,8 @@ php artisan serve --port=80
 
 8- check the docs here 
 https://documenter.getpostman.com/view/2536974/Uze1wQRz
+
+9- run test
+```bash 
+php artisan test
+```
