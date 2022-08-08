@@ -22,7 +22,7 @@ class BabyPolicy
 
     public function update(User $user, Baby $baby)
     {
-        return $user->id === $baby->user_id;
+        return ($user->id === $baby->user_id || $baby->user->partners->contains($user->id));
     }
 
     public function delete(User $user, Baby $baby)

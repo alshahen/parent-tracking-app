@@ -42,6 +42,7 @@ class UserEloquentRepository implements UserRepository
     public function createPartner($attributes): void
     {
         User::findOrFail($attributes['user_id'])->partners()->syncWithoutDetaching(User::findOrFail($attributes['partner_id']));
+        User::findOrFail($attributes['partner_id'])->partners()->syncWithoutDetaching(User::findOrFail($attributes['user_id']));
     }
 
     public function factory(): Factory
